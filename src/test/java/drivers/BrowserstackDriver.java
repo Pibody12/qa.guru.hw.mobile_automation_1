@@ -21,13 +21,14 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("platformName", "android");
         caps.setCapability("appium:deviceName", "Samsung Galaxy S22 Ultra");
         caps.setCapability("appium:platformVersion", "12.0");
+        caps.setCapability("appium:automationName", "UiAutomator2");
         caps.setCapability("appium:app", "bs://sample.app");
 
         HashMap<String, Object> bstackOptions = new HashMap<>();
 
         bstackOptions.put("userName", "bsuser_wRTViP");
         bstackOptions.put("accessKey", "zHJ52YppsoNf9U4pYaTz");
-//        bstackOptions.put("appiumVersion", "2.0.1");
+        bstackOptions.put("appiumVersion", "2.19.0");
         bstackOptions.put("projectName", "First Java Project");
         bstackOptions.put("buildName", "browserstack-build-1");
         bstackOptions.put("sessionName", "first_test");
