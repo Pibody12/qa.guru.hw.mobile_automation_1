@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
 import helpers.Attach;
@@ -29,9 +30,13 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
+        String sessionId = Selenide.sessionId().toString();
+        System.out.println("Session Id: " + sessionId);
+
 //        Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-//        Attach.addVideo();
         closeWebDriver();
+
+        Attach.addVideo(sessionId);
     }
 }
