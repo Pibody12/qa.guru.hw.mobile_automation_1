@@ -15,7 +15,7 @@ public class SearchTests extends TestBase {
     void successfulSearchTest() {
 
         step("Ввод поискового запроса", () -> {
-            $(id("org.wikipedia.alpha:id/search_container")).getWrappedElement().click();
+            $(id("org.wikipedia.alpha:id/search_container")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
         });
 

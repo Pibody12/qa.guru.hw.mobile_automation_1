@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,8 +19,6 @@ public class TestBase {
         Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
-        Configuration.screenshots = false;
-        Configuration.savePageSource = false;
     }
 
     @BeforeEach
@@ -30,6 +29,9 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
+//        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+//        Attach.addVideo();
         closeWebDriver();
     }
 }

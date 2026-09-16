@@ -3,8 +3,8 @@ package drivers;
 import com.codeborne.selenide.WebDriverProvider;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
@@ -28,7 +28,7 @@ public class BrowserstackDriver implements WebDriverProvider {
 
         bstackOptions.put("userName", "bsuser_wRTViP");
         bstackOptions.put("accessKey", "zHJ52YppsoNf9U4pYaTz");
-        bstackOptions.put("appiumVersion", "2.19.0");
+        bstackOptions.put("appiumVersion", "2.12.1");
         bstackOptions.put("projectName", "First Java Project");
         bstackOptions.put("buildName", "browserstack-build-1");
         bstackOptions.put("sessionName", "first_test");
@@ -38,7 +38,7 @@ public class BrowserstackDriver implements WebDriverProvider {
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
         try {
-            return new RemoteWebDriver(
+            return new AndroidDriver(
                     new URL("https://hub.browserstack.com/wd/hub"), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
