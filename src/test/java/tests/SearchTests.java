@@ -20,7 +20,8 @@ public class SearchTests extends TestBase {
         });
 
         step("Проверка результата поиска", () -> {
-        $$(className("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
+        $$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                .shouldHave(sizeGreaterThan(0));
         });
     }
 }
