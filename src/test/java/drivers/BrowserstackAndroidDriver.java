@@ -11,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class BrowserstackDriver implements WebDriverProvider {
+public class BrowserstackAndroidDriver implements WebDriverProvider {
 
     @Nonnull
     @Override
@@ -22,7 +22,9 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("appium:deviceName", "Samsung Galaxy S22 Ultra");
         caps.setCapability("appium:platformVersion", "12.0");
         caps.setCapability("appium:automationName", "UiAutomator2");
-        caps.setCapability("appium:app", "bs://206d07292e9b4056d5d41f099ebbc79aa9360185");
+        caps.setCapability("appium:app", "bs://sample.app");
+//        Для новой версии вики
+//        caps.setCapability("appium:app", "bs://206d07292e9b4056d5d41f099ebbc79aa9360185");
 
         HashMap<String, Object> bstackOptions = new HashMap<>();
 
