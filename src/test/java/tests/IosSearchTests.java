@@ -3,6 +3,7 @@ package tests;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -18,7 +19,8 @@ import static org.openqa.selenium.By.className;
 public class IosSearchTests extends TestBaseIos {
 
     @Test
-    void successfulSearchTest() {
+    @DisplayName("Проверка перехода по кнопке Text")
+    void successfulSearchIosTest() {
 
         step("Нажать кнопку Text", () -> {
             $(accessibilityId("Text")).click();
