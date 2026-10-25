@@ -28,8 +28,8 @@ public class BrowserstackAndroidDriver implements WebDriverProvider {
 
         HashMap<String, Object> bstackOptions = new HashMap<>();
 
-        bstackOptions.put("userName", "drobotenkotimofe_aFRH7J");
-        bstackOptions.put("accessKey", "XQqGSSo1oR5sYnBJJGnf");
+        bstackOptions.put("userName", System.getProperty("user_name"));
+        bstackOptions.put("accessKey", System.getProperty("access_key"));
         bstackOptions.put("appiumVersion", "2.12.1");
         bstackOptions.put("projectName", "First Java Project");
         bstackOptions.put("buildName", "browserstack-build-1");
@@ -41,7 +41,7 @@ public class BrowserstackAndroidDriver implements WebDriverProvider {
         // and desired capabilities defined above
         try {
             return new AndroidDriver(
-                    new URL("https://hub.browserstack.com/wd/hub"), caps);
+                    new URL(System.getProperty("browserstack_url")), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
